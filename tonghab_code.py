@@ -32,7 +32,7 @@ print('importing all library time : ', time.time() - start)
 data = {}
 headers = {}
 #res = requests.post(
-#    "http://yt4307.iptime.org:8443/api/pyconnect", json=data, headers=headers)
+#    "", json=data, headers=headers)
 todays_inputed_wav_number = 0
 frame_length = 0.025
 frame_stride = 0.010
@@ -248,7 +248,7 @@ def Guess_step1():
     print(max_hit_user+1,"번 사용자 음성입니다!!!")
     data = { "data" : max_hit_user+1 }
     headers = {}
-    res = requests.post("https://garin.r-e.kr:8443/api/pyconnect", json = data, headers = headers)
+    res = requests.post("****************", json = data, headers = headers)
 
     print(res.json())
 
@@ -265,7 +265,7 @@ def Guess_step1():
 # then all of algorithm starts
 # else? check every 0.x sec. depends on RPi spec. (0.1 sec for RPi4 B 8GB RAM)
 
-db = pymongo.MongoClient("mongodb://yt4307.iptime.org:27017").garin
+db = pymongo.MongoClient("******************").garin
 def dbcheck():
     global last_wav
     max = db.audios.find_one(sort=[("audioName", pymongo.DESCENDING)])
